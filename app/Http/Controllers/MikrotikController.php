@@ -28,7 +28,7 @@ class MikrotikController extends Controller
 
 
         } else {
-            return "connection failed";
+            return "Connection Failed, Please make sure your device UP!";
         }
     }
 
@@ -59,7 +59,7 @@ class MikrotikController extends Controller
                 return redirect()->back()->with('message', "Client $clientIp is already blocked.");
             }
         } else {
-            return "connection failed";
+            return "Connection Failed, Please make sure your device UP!";
         }
 
     }
@@ -88,7 +88,7 @@ class MikrotikController extends Controller
                 return redirect()->back()->with('message', "Client $clientIp is not blocked.");
             }
         } else {
-            return "Connection failed";
+            return "Connection Failed, Please make sure your device UP!";
         }
     }
 }

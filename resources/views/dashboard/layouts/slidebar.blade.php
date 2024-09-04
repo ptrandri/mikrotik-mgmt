@@ -20,12 +20,6 @@
                 </a>
             </li>
 
-            {{-- <li class="side-nav-item">
-                <a href="/tickets" class="side-nav-link"><i class="fa-solid fa-ticket"></i>
-                    <span> Ticket </span>
-                </a>
-            </li> --}}
-
             <li class="side-nav-item">
                 <a href="/mikrotik" class="side-nav-link"><i class="fa-solid fa-ticket"></i>
                     <span> Mikrotik </span>
@@ -36,11 +30,6 @@
         @role('Administrator')
             <ul class="side-nav">
                 <li class="side-nav-title side-nav-item">Admin</li>
-                {{-- <li class="side-nav-item">
-                    <a href="/report" class="side-nav-link"><i class="fa-sharp fa-solid fa-file-import"></i>
-                        <span> Report </span>
-                    </a>
-                </li> --}}
                 <li class="side-nav-item">
                     <a href="/users" class="side-nav-link"><i class="fa-sharp fa-solid fa-users"></i>
                         <span> Users </span>
