@@ -32,23 +32,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('page.about', [
-        'title' => 'About',
-        "name" => 'Andri Putra',
-        "email" => 'ptrandri@hotmail.com'
-    ]);
-});
-
-Route::get('/blogs', function () {
-    return view('page.posts', [
-        'title' => 'Posts'
-    ]);
-});
-
 Route::get('/login', [LoginController::class, 'index'])->name("login")->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
@@ -56,20 +41,14 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 // Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-// // Route::get('/ticket/', [TicketController::class, 'index'])->middleware('auth');
-// Route::resource('tickets',TicketController::class)->middleware('auth');
-// Route::get('/search', [TicketController::class, 'search'])->middleware('auth');
-
-// Route::get('/report', [ReportController::class, 'index'])->middleware('auth','role:Administrator');
-// Route::post('/report/export', [ReportController::class, 'export'])->middleware('auth','role:Administrator');
-Route::resource('users',AdminUserController::class)->middleware('role:Administrator','auth');
-
 // Mikrotik
 Route::get('/mikrotik', [MikrotikController::class, 'index'])->middleware('auth');
 Route::get('/block-client/{ip}', [MikrotikController::class, 'blockClient'])->name('block.client')->middleware('auth');
 Route::get('/unblock-client/{ip}', [MikrotikController::class, 'unblockClient'])->name('unblock.client')->middleware('auth');
-Route::get('/firewall', [MikrotikController::class, 'firewallClient'])->middleware('auth');;
+Route::get('/firewall', [MikrotikController::class, 'firewallClient'])->middleware('auth');
 
+// Router For user Management
+Route::resource('users',AdminUserController::class)->middleware('role:Administrator','auth');
 
 
 

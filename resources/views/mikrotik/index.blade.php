@@ -61,7 +61,7 @@
         {{-- Firewall --}}
         <div class="card shadow mb-4">
             <div class="mt-3 ms-3">
-                <h1 class="h4">List of Firewall Firewall Filter</h1>
+                <h1 class="h4">List of Firewall Filter</h1>
             </div>
 
             <div class="card-body">
