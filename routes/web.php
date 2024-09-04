@@ -65,11 +65,10 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::resource('users',AdminUserController::class)->middleware('role:Administrator','auth');
 
 // Mikrotik
-Route::get('/mikrotik', [MikrotikController::class, 'index']);
-Route::get('/block-client/{ip}', [MikrotikController::class, 'blockClient'])->name('block.client');
-Route::get('/unblock-client/{ip}', [MikrotikController::class, 'unblockClient'])->name('unblock.client');
-
-Route::get('/firewall', [MikrotikController::class, 'firewallClient']);
+Route::get('/mikrotik', [MikrotikController::class, 'index'])->middleware('auth');
+Route::get('/block-client/{ip}', [MikrotikController::class, 'blockClient'])->name('block.client')->middleware('auth');
+Route::get('/unblock-client/{ip}', [MikrotikController::class, 'unblockClient'])->name('unblock.client')->middleware('auth');
+Route::get('/firewall', [MikrotikController::class, 'firewallClient'])->middleware('auth');;
 
 
 
